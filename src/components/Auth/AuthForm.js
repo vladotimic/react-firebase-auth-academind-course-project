@@ -23,7 +23,7 @@ const AuthForm = () => {
     if (isLogin) {
     } else {
       fetch(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBZhsabDexE9BhcJbGxnZ4DiRlrCN9xe24',
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.API_KEY}`,
         {
           method: 'POST',
           body: JSON.stringify({
@@ -53,14 +53,14 @@ const AuthForm = () => {
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor='email'>Your Email</label>
-          <input type='email' id='email' required ref={emailInputRef} />
+          <label htmlFor="email">Your Email</label>
+          <input type="email" id="email" required ref={emailInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor='password'>Your Password</label>
+          <label htmlFor="password">Your Password</label>
           <input
-            type='password'
-            id='password'
+            type="password"
+            id="password"
             required
             ref={passwordInputRef}
           />
@@ -68,7 +68,7 @@ const AuthForm = () => {
         <div className={classes.actions}>
           <button>{isLogin ? 'Login' : 'Create Account'}</button>
           <button
-            type='button'
+            type="button"
             className={classes.toggle}
             onClick={switchAuthModeHandler}
           >
