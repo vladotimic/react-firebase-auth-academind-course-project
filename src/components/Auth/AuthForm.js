@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 
 import classes from './AuthForm.module.css';
+import { API_KEY } from '../../constants';
 
 const AuthForm = () => {
   const emailInputRef = useRef();
@@ -23,7 +24,7 @@ const AuthForm = () => {
     if (isLogin) {
     } else {
       fetch(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.API_KEY}`,
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${API_KEY}`,
         {
           method: 'POST',
           body: JSON.stringify({
