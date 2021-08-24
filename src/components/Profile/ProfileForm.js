@@ -1,6 +1,6 @@
 import { useRef, useContext } from 'react';
 import { API_KEY } from '../../constants';
-import AuthContext from '../auth-context';
+import AuthContext from '../../store/auth-context';
 import { useHistory } from 'react-router';
 
 import classes from './ProfileForm.module.css';
