@@ -9,7 +9,6 @@ const ProfileForm = () => {
   const history = useHistory();
   const newPasswordInputRef = useRef();
   const authContext = useContext(AuthContext);
-  console.log(authContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
