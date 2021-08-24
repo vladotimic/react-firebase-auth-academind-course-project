@@ -7,6 +7,7 @@ import classes from './ProfileForm.module.css';
 const ProfileForm = () => {
   const newPasswordInputRef = useRef();
   const authContext = useContext(AuthContext);
+  console.log(authContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ const ProfileForm = () => {
   };
 
   return (
-    <form className={classes.form} onClick={handleSubmit}>
+    <form className={classes.form} onSubmit={handleSubmit}>
       <div className={classes.control}>
         <label htmlFor="new-password">New Password</label>
         <input
